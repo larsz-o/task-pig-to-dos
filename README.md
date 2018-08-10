@@ -5,9 +5,10 @@ A full-stack 'To Do' application
 - [x] Create a README.md 
 - [x] Set up front end files (index.html, styles.css)
 - [x] Source in angular.js
-- [x] Set up client.js, and server.js
+- [x] Set up client.js with Angular
 - [x] Install Express 
-- [] Install Mongo
+- [x] Install Mongoose
+- [x] Set up the server
 - [] Set up a database in MongoDB in server.js and connect it to the project
 - [] Write a Schema for data 
 - [] Make at least 15 commits
