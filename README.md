@@ -12,16 +12,16 @@ A full-stack 'To Do' application
 - [x] Set up a database in MongoDB in server.js and connect it to the project
 - [x] Write a Schema for data 
 - [] Make at least 15 commits
-- [] Using AngularJS, create a front end experience that allows a user to create a task.
+- [x] Using AngularJS, create a front end experience that allows a user to create a task.
     - [x] Create a form for tasks
     - [x] Create containers for tasks and a pig to appear 
     - []including a category 
     - [x] Create a POST route to the server
 - [x] When the task is created, it should be stored inside of a database (MongoDB)
     - [x] Send the POSTed data to Mongo 
-- [] Whenever a task is created the front end should refresh to show all tasks that need to be completed
+- [x] Whenever a task is created the front end should refresh to show all tasks that need to be completed
     - [x] Make a GET request for all tasks 
-    - [] Create an ng-repeat to append all tasks to the DOM, run getTasks after the POST route to update the list
+    - [x] Create an ng-repeat to append all tasks to the DOM, run getTasks after the POST route to update the list
 - [] Each task should have an option to 'Complete' or 'Delete'.
     - [] Create buttons for marking as complete or deleting tasks
     - [] Send PUT request to the server to edit the values of that task in the database

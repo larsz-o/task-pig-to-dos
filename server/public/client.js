@@ -37,6 +37,5 @@ taskApp.controller('TaskController', function($http){
 
 
     }
-
-
+    getTasks(); 
 })
