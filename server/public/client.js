@@ -23,6 +23,19 @@ taskApp.controller('TaskController', function($http){
         });
     }
 
+    vm.deleteTask = function(taskID){
+       $http({
+           method: 'DELETE', 
+           url: '/tasks/' + taskID
+       }).then(function(response){
+           console.log('Task deleted');
+           getTasks();
+       }).catch(function(error){
+           alert('Unable to remove task');
+           console.log(error); 
+       });
+    }
+
     function getTasks(){
         $http({
             method: 'GET',
@@ -34,8 +47,8 @@ taskApp.controller('TaskController', function($http){
             alert('Unable to get tasks from the server');
             console.log(error);
         });
-
-
     }
+
+
     getTasks(); 
 })

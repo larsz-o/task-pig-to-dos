@@ -32,7 +32,7 @@
                 <tbody>
                     <tr ng-repeat="todo in tc.taskList">
                         <td>{{todo.task}}</td>
-                        <td><button>Delete?</button></td>
+                        <td><button ng-click="tc.deleteTask(todo._id)">Delete?</button></td>
                         <!-- need to create a delete function -->
                     </tr>
                 </tbody>

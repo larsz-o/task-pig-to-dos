@@ -23,10 +23,11 @@ A full-stack 'To Do' application
     - [x] Make a GET request for all tasks 
     - [x] Create an ng-repeat to append all tasks to the DOM, run getTasks after the POST route to update the list
 - [] Each task should have an option to 'Complete' or 'Delete'.
-    - [] Create buttons for marking as complete or deleting tasks
+    - [x] Create buttons for deleting tasks
+    - [] Create button for marking task as complete 
     - [] Send PUT request to the server to edit the values of that task in the database
     (Whether or not a task is complete should also be stored in the database.)
-    - [] Send DELETE request to the server to delete a task from the database
+    - [x] Send DELETE request to the server to delete a task from the database
     (Deleting a task should remove it both from the Front End as well as the Database.)
 - [] When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. ng-class will come in handy!)
 - [] Edit CSS: 

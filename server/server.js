@@ -44,6 +44,14 @@ app.post('/tasks', (req, res)=>{
    })
 });
 
+app.delete('/tasks/:id', (req, res)=>{
+    Tasks.findByIdAndRemove(req.params.id).then((response)=>{
+        res.sendStatus(200);
+    }).catch((error)=>{
+        res.sendStatus(500);
+    })
+});
+
 //SERVER
 app.listen(PORT, ()=>{
     console.log('listening on:', PORT); 
