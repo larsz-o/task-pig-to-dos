@@ -11,7 +11,7 @@ A full-stack 'To Do' application
 - [x] Set up the server
 - [x] Set up a database in MongoDB in server.js and connect it to the project
 - [x] Write a Schema for data 
-- [] Make at least 15 commits
+- [x] Make at least 15 commits
 - [x] Using AngularJS, create a front end experience that allows a user to create a task.
     - [x] Create a form for tasks
     - [x] Create containers for tasks and a pig to appear 
