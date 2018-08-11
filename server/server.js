@@ -52,6 +52,19 @@ app.delete('/tasks/:id', (req, res)=>{
     })
 });
 
+app.put('/tasks/complete/:id', (req, res)=>{
+    console.log('update:', req.params.id);
+    Tasks.findOne({_id: req.params.id}).then((foundTask)=>{
+        console.log(foundTask);
+        foundTask.complete = !foundTask.complete; 
+        foundTask.save().then((response)=>{
+            res.sendStatus(200);
+        }).catch((error)=>{
+            res.sendStatus(500);
+        })
+    })
+});
+
 //SERVER
 app.listen(PORT, ()=>{
     console.log('listening on:', PORT); 

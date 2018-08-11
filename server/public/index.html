@@ -21,24 +21,27 @@
             <label>Add a Task:</label>
             <input type="text" ng-model="tc.taskIn">
             <!-- add a category input here later -->
-            <button>Submit</button>
+            <button class="btn btn-primary">Submit</button>
         </form>
-        <div class="task-container">
-            <table>
+        <div id="task-container" class="table-responsive">
+            <table class="table table-borderless table-hover">
                 <thead>
-                    <th>Task</th>
-                    <th>Remove</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Remove</th>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="todo in tc.taskList">
-                        <td>{{todo.task}}</td>
-                        <td><button ng-click="tc.deleteTask(todo._id)">Delete?</button></td>
+                    <tr scope="row" ng-repeat="todo in tc.taskList">
+                        <td ng-click="tc.completeTask(todo._id)">{{todo.task}}</td>
+                        <td id="right">
+                            <button class="btn btn-danger" ng-click="tc.deleteTask(todo._id)">Delete?</button>
+                        </td>
                         <!-- need to create a delete function -->
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="pig-container">
+            <img src="425px-Pig_cartoon_04.svg.png">
             <!-- this is where the piggy will appear -->
         </div>
     </div>

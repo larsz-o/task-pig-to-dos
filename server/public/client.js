@@ -5,6 +5,30 @@ taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
 
+    //function expressions 
+    vm.completeTask = function(taskID){
+        $http({
+            method: 'PUT', 
+            url: '/tasks/complete/' + taskID
+        }).then(function(response){
+            getTasks();
+        }).catch(function(error){
+            alert('Unable to complete task');
+            console.log(error);
+        });
+    }
+    vm.deleteTask = function(taskID){
+       $http({
+           method: 'DELETE', 
+           url: '/tasks/' + taskID
+       }).then(function(response){
+           console.log('Task deleted');
+           getTasks();
+       }).catch(function(error){
+           alert('Unable to remove task');
+           console.log(error); 
+       });
+    }
     vm.submitTasks = function(){
         let newTask = {
             task: vm.taskIn,
@@ -22,20 +46,7 @@ taskApp.controller('TaskController', function($http){
             console.log(error);
         });
     }
-
-    vm.deleteTask = function(taskID){
-       $http({
-           method: 'DELETE', 
-           url: '/tasks/' + taskID
-       }).then(function(response){
-           console.log('Task deleted');
-           getTasks();
-       }).catch(function(error){
-           alert('Unable to remove task');
-           console.log(error); 
-       });
-    }
-
+    //function declarations
     function getTasks(){
         $http({
             method: 'GET',

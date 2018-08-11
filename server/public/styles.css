@@ -5,3 +5,10 @@ h1 {
 th {
     visibility: hidden;
 }
+.jumbotron {
+    background-color: rgb(226, 180, 189);
+    color: darkslategray; 
+}
+#right{
+    text-align: right; 
+}
