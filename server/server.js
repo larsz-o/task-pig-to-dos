@@ -8,7 +8,6 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema({
     task: {type: String}, 
-    category: {type: String},
     complete: {type: Boolean}
 });
 
@@ -27,6 +26,23 @@ app.use(bodyParser.json());
 app.use(express.static('server/public'));
 
 //ROUTES
+app.get('/tasks', (req, res)=>{
+    Tasks.find({}).then((foundTasks)=>{
+        res.send(foundTasks);
+    })
+});
+
+app.post('/tasks', (req, res)=>{
+   const dataFromClient = req.body;
+   const taskToAdd = new Tasks(dataFromClient); 
+   taskToAdd.save().then(()=>{
+       console.log('Task Added:', taskToAdd);
+       res.sendStatus(201);
+   }).catch((error)=>{
+       console.log(error);
+       res.sendStatus(500);
+   })
+});
 
 //SERVER
 app.listen(PORT, ()=>{

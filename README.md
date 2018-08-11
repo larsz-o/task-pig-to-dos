@@ -16,11 +16,12 @@ A full-stack 'To Do' application
     - [x] Create a form for tasks
     - [x] Create containers for tasks and a pig to appear 
     - []including a category 
-    - [] Create a POST route to the server
-- [] When the task is created, it should be stored inside of a database (MongoDB)
-    - [] Send the POSTed data to Mongo 
+    - [x] Create a POST route to the server
+- [x] When the task is created, it should be stored inside of a database (MongoDB)
+    - [x] Send the POSTed data to Mongo 
 - [] Whenever a task is created the front end should refresh to show all tasks that need to be completed
-    - [] Make a GET request for all tasks 
+    - [x] Make a GET request for all tasks 
+    - [] Create an ng-repeat to append all tasks to the DOM, run getTasks after the POST route to update the list
 - [] Each task should have an option to 'Complete' or 'Delete'.
     - [] Create buttons for marking as complete or deleting tasks
     - [] Send PUT request to the server to edit the values of that task in the database
