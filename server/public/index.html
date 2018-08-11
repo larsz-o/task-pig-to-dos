@@ -12,12 +12,12 @@
     <title>Task Pig</title>
 </head>
 
-<body>
+<body ng-app="taskApp">
     <div class="jumbotron">
         <h1 class="display-4">Task Pig</h1>
     </div>
-    <div class="container">
-        <form>
+    <div class="container" ng-controller="taskController as tc">
+        <form ng-submit="tc.submitTasks()">
             <label>Add a Task:</label>
             <input type="text">
             <!-- add a category input here later -->
