@@ -1,6 +1,6 @@
 console.log('js');
 
-const taskApp = angular.module('taskApp', []);
+const taskApp = angular.module('taskApp', [$confirm]);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
@@ -12,14 +12,13 @@ taskApp.controller('TaskController', function($http){
             url: '/tasks/complete/' + taskID
         }).then(function(response){
             getTasks();
-            // make the pig appear
         }).catch(function(error){
             alert('Unable to complete task');
             console.log(error);
         });
     }
     vm.deleteTask = function(taskID){
-       $http({
+        $http({
            method: 'DELETE', 
            url: '/tasks/' + taskID
        }).then(function(response){
@@ -30,6 +29,7 @@ taskApp.controller('TaskController', function($http){
            console.log(error); 
        });
     }
+
     vm.submitTasks = function(){
         let newTask = {
             task: vm.taskIn,
@@ -48,6 +48,8 @@ taskApp.controller('TaskController', function($http){
             console.log(error);
         });
     }
+
+
     //function declarations
     function getTasks(){
         $http({
@@ -56,12 +58,14 @@ taskApp.controller('TaskController', function($http){
         }).then(function(response){
             console.log('Back from the server with', response.data);
             vm.taskList = response.data; 
+            vm.taskIn = '';
+            vm.categoryIn = '';
+            vm.searchCategory = '';
         }).catch(function(error){
             alert('Unable to get tasks from the server');
             console.log(error);
         });
-    }
-
+    } 
 
     getTasks(); 
 })

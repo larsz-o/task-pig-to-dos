@@ -24,7 +24,7 @@
     <div class="container" ng-controller="TaskController as tc">
         <div class="col-md-10 offset-md-3">
             <form ng-submit="tc.submitTasks()">
-                <input type="text" placeholder="Add a Task" ng-model="tc.taskIn">
+                <input type="text" placeholder="Add a Task" ng-model="tc.taskIn" required>
                 <select name="categories" ng-model="tc.categoryIn">
                     <option value="">---Select Category---</option>
                     <option value="bills">Bills</option>
@@ -32,7 +32,10 @@
                     <option value="chores">Chores</option>
                     <option value="family">Family</option>
                     <option value="friends">Friends</option>
-                    <option value="leisure">Lesiure</option>
+                    <option value="healthfitness">Health and Fitness</option>
+                    <option value="leisure">Lesiure and Entertainment</option>
+                    <option value="personalcare">Personal Care</option>
+                    <option value="pets">Pets</option>
                     <option value="school">School</option>
                     <option value="shopping">Shopping</option>
                     <option value="work">Work</option>
@@ -43,14 +46,17 @@
             </form>
             <form id="filter-form">
                 <label>Filter by Category:</label>
-                <select name="categories" ng-model="searchCategory">
+                <select name="categories" ng-model="tc.searchCategory">
                     <option value="">---View All---</option>
                     <option value="bills">Bills</option>
                     <option value="car">Car</option>
                     <option value="chores">Chores</option>
                     <option value="family">Family</option>
                     <option value="friends">Friends</option>
-                    <option value="leisure">Lesiure</option>
+                    <option value="healthfitness">Health and Fitness</option>
+                    <option value="leisure">Lesiure and Entertainment</option>
+                    <option value="personalcare">Personal Care</option>
+                    <option value="pets">Pets</option>
                     <option value="school">School</option>
                     <option value="shopping">Shopping</option>
                     <option value="work">Work</option>
@@ -66,20 +72,22 @@
                     <th scope="col">Remove</th>
                 </thead>
                 <tbody>
-                    <tr scope="row" ng-repeat="todo in tc.taskList | filter: searchCategory" ng-class="{completed: todo.complete == true}">
+                    <tr scope="row" ng-repeat="todo in tc.taskList | filter: tc.searchCategory " ng-class="{completed: todo.complete == true}">
                         <td ng-click="tc.completeTask(todo._id)">
                             <ul>
                                 <li>{{todo.task}}</li>
                             </ul>
                         </td>
                         <td id="right">
-                            <button class="btn btn-danger" ng-click="tc.deleteTask(todo._id)">X</button>
+                            <button class="btn btn-danger" ng-model="tc.delete" ng-click="tc.deleteTask(todo._id)">X</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
+        <div class="container" ng-repeat="pig in tc.pigGif" ng-show="tc.pigView">
+            <img src={{pig.url}}>
+        </div>
     </div>
 
 </body>
