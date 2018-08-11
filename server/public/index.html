@@ -26,7 +26,7 @@
             <form ng-submit="tc.submitTasks()">
                 <input type="text" placeholder="Add a Task" ng-model="tc.taskIn">
                 <select name="categories" ng-model="tc.categoryIn">
-                    <option value="">---Select Category---</option>  
+                    <option value="">---Select Category---</option>
                     <option value="bills">Bills</option>
                     <option value="car">Car</option>
                     <option value="chores">Chores</option>
@@ -41,16 +41,32 @@
                 </select>
                 <button class="btn btn-primary">Submit</button>
             </form>
+            <form id="filter-form">
+                <label>Filter by Category:</label>
+                <select name="categories" ng-model="searchCategory">
+                    <option value="">---View All---</option>
+                    <option value="bills">Bills</option>
+                    <option value="car">Car</option>
+                    <option value="chores">Chores</option>
+                    <option value="family">Family</option>
+                    <option value="friends">Friends</option>
+                    <option value="leisure">Lesiure</option>
+                    <option value="school">School</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="work">Work</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="other">Other</option>
+                </select>
+            </form>
         </div>
-        <div id="task-container" class="table-responsive">
+        <div id="task-container" class="table-responsive-md">
             <table class="table table-borderless table-hover">
                 <thead>
                     <th scope="col">Task</th>
                     <th scope="col">Remove</th>
                 </thead>
                 <tbody>
-                    <tr scope="row" ng-repeat="todo in tc.taskList" ng-class="{completed: todo.complete == true}">
-
+                    <tr scope="row" ng-repeat="todo in tc.taskList | filter: searchCategory" ng-class="{completed: todo.complete == true}">
                         <td ng-click="tc.completeTask(todo._id)">
                             <ul>
                                 <li>{{todo.task}}</li>

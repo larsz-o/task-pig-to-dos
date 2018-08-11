@@ -10,11 +10,15 @@ ul{
 }
 .completed{
     text-decoration: line-through;
+    background-color: #DECADE
 }
 
 .jumbotron {
     background-color: #D1E5E5;
     color: darkslategray; 
+}
+#filter-form{
+  margin-left: 100px;
 }
 #right{
     text-align: right; 

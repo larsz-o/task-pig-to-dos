@@ -24,7 +24,7 @@ A full-stack 'To Do' application
     - [x] Create an ng-repeat to append all tasks to the DOM, run getTasks after the POST route to update the list
 - [] Each task should have an option to 'Complete' or 'Delete'.
     - [x] Create buttons for deleting tasks
-    - [] Create button for marking task as complete 
+    - [x] Create button for marking task as complete 
     - [x] Send PUT request to the server to edit the values of that task in the database
     (Whether or not a task is complete should also be stored in the database.)
     - [x] Send DELETE request to the server to delete a task from the database
@@ -39,7 +39,7 @@ A full-stack 'To Do' application
 - [x] Implement Bootstrap to take the visuals of the page up a notch.
 - [] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interpret this however you would like.
     - [] Try out SweetAlert 
-- [] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
+- [x] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
 - [] Add front-end validation to the 'make-a-task' form.
-- [] Add a category field for the task. Allow users to filter by task category.
+- [x] Add a category field for the task. Allow users to filter by task category.
 - [] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
