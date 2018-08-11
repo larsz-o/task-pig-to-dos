@@ -9,11 +9,13 @@ A full-stack 'To Do' application
 - [x] Install Express 
 - [x] Install Mongoose
 - [x] Set up the server
-- [] Set up a database in MongoDB in server.js and connect it to the project
-- [] Write a Schema for data 
+- [x] Set up a database in MongoDB in server.js and connect it to the project
+- [x] Write a Schema for data 
 - [] Make at least 15 commits
 - [] Using AngularJS, create a front end experience that allows a user to create a task.
-    - [] Create a form for tasks, including a category 
+    - [x] Create a form for tasks
+    - [x] Create containers for tasks and a pig to appear 
+    - []including a category 
     - [] Create a POST route to the server
 - [] When the task is created, it should be stored inside of a database (MongoDB)
     - [] Send the POSTed data to Mongo 
