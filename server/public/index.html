@@ -33,7 +33,7 @@
                     <tr scope="row" ng-repeat="todo in tc.taskList">
                         <td ng-click="tc.completeTask(todo._id)">{{todo.task}}</td>
                         <td id="right">
-                            <button class="btn btn-danger" ng-click="tc.deleteTask(todo._id)">Delete?</button>
+                            <button class="btn btn-danger" ng-click="tc.deleteTask(todo._id)">X</button>
                         </td>
                         <!-- need to create a delete function -->
                     </tr>
@@ -43,6 +43,7 @@
         <div class="pig-container">
             <img src="425px-Pig_cartoon_04.svg.png">
             <!-- this is where the piggy will appear -->
+            <!-- need to figure out how to keep the pig on the page only when a task has been completed. then reset after a period of time if there are other uncompleted tasks -->
         </div>
     </div>
 

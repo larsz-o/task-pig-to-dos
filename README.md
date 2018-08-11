@@ -25,7 +25,7 @@ A full-stack 'To Do' application
 - [] Each task should have an option to 'Complete' or 'Delete'.
     - [x] Create buttons for deleting tasks
     - [] Create button for marking task as complete 
-    - [] Send PUT request to the server to edit the values of that task in the database
+    - [x] Send PUT request to the server to edit the values of that task in the database
     (Whether or not a task is complete should also be stored in the database.)
     - [x] Send DELETE request to the server to delete a task from the database
     (Deleting a task should remove it both from the Front End as well as the Database.)
@@ -36,7 +36,7 @@ A full-stack 'To Do' application
     - [] text color &or background color of tasks to show whether or not they have been completed
 
 # STRETCH GOALS
-- [] Implement Bootstrap to take the visuals of the page up a notch.
+- [x] Implement Bootstrap to take the visuals of the page up a notch.
 - [] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interpret this however you would like.
     - [] Try out SweetAlert 
 - [] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.

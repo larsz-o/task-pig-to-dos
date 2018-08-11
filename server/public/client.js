@@ -1,6 +1,6 @@
 console.log('js');
 
-const taskApp = angular.module('taskApp', []);
+const taskApp = angular.module('taskApp', ['ng-sweet-alert']);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
