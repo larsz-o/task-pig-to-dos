@@ -1,6 +1,6 @@
 console.log('js');
 
-const taskApp = angular.module('taskApp', ['ng-sweet-alert']);
+const taskApp = angular.module('taskApp', []);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
@@ -12,6 +12,7 @@ taskApp.controller('TaskController', function($http){
             url: '/tasks/complete/' + taskID
         }).then(function(response){
             getTasks();
+            // make the pig appear
         }).catch(function(error){
             alert('Unable to complete task');
             console.log(error);
@@ -32,6 +33,7 @@ taskApp.controller('TaskController', function($http){
     vm.submitTasks = function(){
         let newTask = {
             task: vm.taskIn,
+            category: vm.categoryIn,
             complete: false
         }
         $http({

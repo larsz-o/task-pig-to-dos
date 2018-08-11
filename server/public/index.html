@@ -14,15 +14,34 @@
 
 <body ng-app="taskApp">
     <div class="jumbotron">
-        <h1 class="display-4">Task Pig</h1>
+
+        <div id="pig-container">
+            <h1 class="display-4">Task Pig
+                <img src="425px-Pig_cartoon_04.svg_60.png">
+            </h1>
+        </div>
     </div>
     <div class="container" ng-controller="TaskController as tc">
-        <form ng-submit="tc.submitTasks()">
-            <label>Add a Task:</label>
-            <input type="text" ng-model="tc.taskIn">
-            <!-- add a category input here later -->
-            <button class="btn btn-primary">Submit</button>
-        </form>
+        <div class="col-md-10 offset-md-3">
+            <form ng-submit="tc.submitTasks()">
+                <input type="text" placeholder="Add a Task" ng-model="tc.taskIn">
+                <select name="categories" ng-model="tc.categoryIn">
+                    <option value="">---Select Category---</option>  
+                    <option value="bills">Bills</option>
+                    <option value="car">Car</option>
+                    <option value="chores">Chores</option>
+                    <option value="family">Family</option>
+                    <option value="friends">Friends</option>
+                    <option value="leisure">Lesiure</option>
+                    <option value="school">School</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="work">Work</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="other">Other</option>
+                </select>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
         <div id="task-container" class="table-responsive">
             <table class="table table-borderless table-hover">
                 <thead>
@@ -30,21 +49,21 @@
                     <th scope="col">Remove</th>
                 </thead>
                 <tbody>
-                    <tr scope="row" ng-repeat="todo in tc.taskList">
-                        <td ng-click="tc.completeTask(todo._id)">{{todo.task}}</td>
+                    <tr scope="row" ng-repeat="todo in tc.taskList" ng-class="{completed: todo.complete == true}">
+
+                        <td ng-click="tc.completeTask(todo._id)">
+                            <ul>
+                                <li>{{todo.task}}</li>
+                            </ul>
+                        </td>
                         <td id="right">
                             <button class="btn btn-danger" ng-click="tc.deleteTask(todo._id)">X</button>
                         </td>
-                        <!-- need to create a delete function -->
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div class="pig-container">
-            <img src="425px-Pig_cartoon_04.svg.png">
-            <!-- this is where the piggy will appear -->
-            <!-- need to figure out how to keep the pig on the page only when a task has been completed. then reset after a period of time if there are other uncompleted tasks -->
-        </div>
+
     </div>
 
 </body>

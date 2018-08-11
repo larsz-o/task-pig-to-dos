@@ -5,8 +5,15 @@ h1 {
 th {
     visibility: hidden;
 }
+ul{
+    list-style-image: url('pigicon_2_25x25.png');
+}
+.completed{
+    text-decoration: line-through;
+}
+
 .jumbotron {
-    background-color: rgb(226, 180, 189);
+    background-color: #D1E5E5;
     color: darkslategray; 
 }
 #right{
