@@ -1,6 +1,6 @@
 console.log('js');
 
-const taskApp = angular.module('taskApp', [$confirm]);
+const taskApp = angular.module('taskApp', []);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
