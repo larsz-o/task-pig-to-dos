@@ -15,7 +15,7 @@ A full-stack 'To Do' application
 - [x] Using AngularJS, create a front end experience that allows a user to create a task.
     - [x] Create a form for tasks
     - [x] Create containers for tasks and a pig to appear 
-    - []including a category 
+    - [x]including a category 
     - [x] Create a POST route to the server
 - [x] When the task is created, it should be stored inside of a database (MongoDB)
     - [x] Send the POSTed data to Mongo 
