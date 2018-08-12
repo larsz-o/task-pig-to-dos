@@ -1,5 +1,3 @@
-console.log('js');
-
 const taskApp = angular.module('taskApp', []);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
@@ -18,16 +16,17 @@ taskApp.controller('TaskController', function($http){
         });
     }
     vm.deleteTask = function(taskID){
-        $http({
-           method: 'DELETE', 
-           url: '/tasks/' + taskID
-       }).then(function(response){
-           console.log('Task deleted');
-           getTasks();
-       }).catch(function(error){
-           alert('Unable to remove task');
-           console.log(error); 
-       });
+        if (confirm('Are you sure you want to delete this task?')){
+            $http({
+                method: 'DELETE', 
+                url: '/tasks/' + taskID
+            }).then(function(response){
+                getTasks();
+            }).catch(function(error){
+                alert('Unable to remove task');
+                console.log(error); 
+            });
+        }
     }
 
     vm.submitTasks = function(){
@@ -41,7 +40,6 @@ taskApp.controller('TaskController', function($http){
             url: '/tasks',
             data: newTask
         }).then(function(response){
-            console.log('success!', response.data);
             getTasks(); 
         }).catch(function(error){
             alert('Unable to add task');
@@ -56,7 +54,6 @@ taskApp.controller('TaskController', function($http){
             method: 'GET',
             url: '/tasks'
         }).then(function(response){
-            console.log('Back from the server with', response.data);
             vm.taskList = response.data; 
             vm.taskIn = '';
             vm.categoryIn = '';

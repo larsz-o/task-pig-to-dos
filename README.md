@@ -37,8 +37,8 @@ A full-stack 'To Do' application
 
 # STRETCH GOALS
 - [x] Implement Bootstrap to take the visuals of the page up a notch.
-- [] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interpret this however you would like.
+- [x] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interpret this however you would like.
 - [x] Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
 - [x] Add front-end validation to the 'make-a-task' form.
 - [x] Add a category field for the task. Allow users to filter by task category.
-- [] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+- [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
