@@ -25,8 +25,8 @@ A MEAN stack to-do list application.
 - [x] Tasks can also be deleted at any time -- before or after being completed. 
 
 ## Next Steps 
-- [] Add the capability to sort tasks by day (e.g. a list for each day of the week)
-- [] Create user accounts 
+[] Add the capability to sort tasks by day (e.g. a list for each day of the week)
+[] Create user accounts 
 
 ## Authors
 * Lars Mackenzie, @larsz-o
