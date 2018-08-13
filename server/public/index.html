@@ -73,7 +73,7 @@
                     <th scope="col">Remove</th>
                 </thead>
                 <tbody>
-                    <tr scope="row" ng-repeat="todo in tc.taskList | orderBy: 'complete': false | filter: tc.searchCategory" ng-class="{completed: todo.complete == true}">
+                    <tr scope="row" ng-repeat="todo in tc.taskList | orderBy: 'complete': false | filter: tc.searchCategory" ng-class="{completed: todo.complete}">
                         <td ng-click="tc.completeTask(todo._id)">
                             <ul>
                                 <li>{{todo.task}}</li>

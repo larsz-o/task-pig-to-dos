@@ -2,8 +2,7 @@ const taskApp = angular.module('taskApp', []);
 taskApp.controller('TaskController', function($http){
     let vm = this; 
     vm.taskList = [];
-
-    //function expressions 
+//function expressions 
     vm.completeTask = function(taskID){
         $http({
             method: 'PUT', 
@@ -28,7 +27,6 @@ taskApp.controller('TaskController', function($http){
             });
         }
     }
-
     vm.submitTasks = function(){
         let newTask = {
             task: vm.taskIn,
@@ -46,9 +44,7 @@ taskApp.controller('TaskController', function($http){
             console.log(error);
         });
     }
-
-
-    //function declarations
+//function declarations
     function getTasks(){
         $http({
             method: 'GET',
@@ -63,6 +59,5 @@ taskApp.controller('TaskController', function($http){
             console.log(error);
         });
     } 
-
     getTasks(); 
 })

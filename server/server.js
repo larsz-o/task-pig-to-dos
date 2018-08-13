@@ -14,10 +14,10 @@ const TaskSchema = new Schema({
 
 mongoose.connect(mongoURI, {useNewUrlParser: true});
 mongoose.connection.on('open', ()=>{
-    console.log('mongoose is working!');
+    console.log('Connected to Mongo');
 });
 mongoose.connection.on('error', (error) =>{
-    console.log('mongoose failed. error:', error);
+    console.log('Connection to Mongo Failed. Error:', error);
 });
 
 const Tasks = mongoose.model('tasks', TaskSchema);
