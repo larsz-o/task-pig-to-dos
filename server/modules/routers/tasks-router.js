@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); 
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb://localhost:27017/taskpig';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/taskpig';
 const Schema = mongoose.Schema; 
 
 //mongo schema 
