@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router(); 
 const mongoose = require('mongoose');
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/taskpig';
 const Schema = mongoose.Schema; 
 
 //mongo schema 
@@ -9,14 +8,6 @@ const TaskSchema = new Schema({
     task: {type: String}, 
     category: {type: String},
     complete: {type: Boolean}
-});
-//mongo connections 
-mongoose.connect(mongoURI, {useNewUrlParser: true});
-mongoose.connection.on('open', ()=>{
-    console.log('Connected to Mongo');
-});
-mongoose.connection.on('error', (error) =>{
-    console.log('Connection to Mongo Failed. Error:', error);
 });
 //mongo model 
 const Tasks = mongoose.model('tasks', TaskSchema);
