@@ -7,7 +7,7 @@ th {
     visibility: hidden;
 }
 ul{
-    list-style-image: url('images/pigicon_2_25x25.png');
+    list-style-image: url('/server/public/images/pigicon_2_25x25.png');
 }
 .completed{
     text-decoration: line-through;
