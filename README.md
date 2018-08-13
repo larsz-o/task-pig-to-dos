@@ -15,8 +15,7 @@ A MEAN stack to-do list application.
 3. `npm start`
 
 ## Screen Shot 
-![Screen Shot of Task Pig]
-(/server/public/images/screenshot_taskpig.png)
+![Screen Shot of Task Pig](https://github.com/larsz-o/weekend-challenge-3/blob/master/server/public/images/screenshot_taskpig.png)
 
 ## Completed Features
 - [x] Users can add a task to their task list
